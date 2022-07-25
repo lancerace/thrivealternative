@@ -1,0 +1,1 @@
+export const DB_UNIQUE_CONSTRAINT_ERR = "duplicate key value violates unique constraint";
