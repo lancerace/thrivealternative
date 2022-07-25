@@ -8,6 +8,9 @@
     "start": "ts-node src/index.ts",
     "dev": "ts-node-dev src/index.ts"
   },
+  "engines": {
+    "node": "16.14.0"
+  },
   "author": "wei jie",
   "license": "ISC",
   "dependencies": {
