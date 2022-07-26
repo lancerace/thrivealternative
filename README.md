@@ -2,11 +2,18 @@
 
 API deployed url is https://thrivealternative.herokuapp.com/graphql
 
-### Architecture
+### Architecture Diagram
 
 ![Diagram](https://i.ibb.co/8PcPpqp/thrive-diagram.png)
 
-https://ibb.co/HGdGs6s
+source: https://ibb.co/HGdGs6s
+
+### UML Diagram
+
+![UML Diagram](https://i.ibb.co/nC6HBxL/thrive-uml-diagram.png)
+
+source: https://ibb.co/hfLPc3m
+
 
 # Public Routes
 
