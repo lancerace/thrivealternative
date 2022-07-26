@@ -31,6 +31,7 @@ source: https://ibb.co/hfLPc3m
 - **GetBlogs** - get all blogs of current logged in user
 - **DeleteComment** - delete a comment
 - **DeleteBlog** - delete a blog together with the comments
+- **UpdateComment** - update comment of a blog
 
 ## How to run the project
 1. `npm install --global yarn`
