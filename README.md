@@ -28,10 +28,13 @@ source: https://ibb.co/hfLPc3m
 
 - **CreateBlog** - create a blog for current user/author
 - **AddComment** - add a comment of a blog.
-- **GetBlogs** - get all blogs of current logged in user
 - **DeleteComment** - delete a comment
 - **DeleteBlog** - delete a blog together with the comments
 - **UpdateComment** - update comment of a blog
+
+#### Query
+
+- **GetBlogs** - get all blogs with comments of current logged in user
 
 ## How to run the project
 1. `npm install --global yarn`
