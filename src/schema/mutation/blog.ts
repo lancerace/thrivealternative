@@ -10,6 +10,10 @@ export const BlogMutationDefs = gql`
         message: String
     }
 
+    type DeleteBlogMutationType implements APIResponseMutationType {
+        message: String
+    }
+
 `
 interface ICreateBlogArgs {
     title: string;
@@ -21,8 +25,17 @@ export async function createBlogMutationResolver(_, args: ICreateBlogArgs, { req
     const authResult: IAuthenticatedUser = await AuthUtil.authenticate(req.headers.authorization);
 
     const { title, content } = args;
-
     const blog: Blog = await BlogService.createBlog({ title, content, authorId: authResult.user.userId })
 
     return (!blog) ? { message: "Failed to create blog" }: { message: "Blog created!" } ;
+}
+
+export async function deleteBlogMutationResolver(_, args: { blogId: number }, { req }) {
+    const authResult: IAuthenticatedUser = await AuthUtil.authenticate(req.headers.authorization);
+
+    const { blogId } = args;
+
+    const res = await BlogService.deleteBlog(blogId);
+    return (res.success) ? { message: "deleted successfully" } : { message: "fail to delete comment" };
+
 }

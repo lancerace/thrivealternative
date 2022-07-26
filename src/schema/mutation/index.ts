@@ -1,5 +1,6 @@
-import { BlogMutationDefs, createBlogMutationResolver } from './blog';
+import { BlogMutationDefs, createBlogMutationResolver, deleteBlogMutationResolver } from './blog';
 import { createUserMutationResolver, UserMutationDefs, loginMutationResolver } from './user';
+import { addCommentMutationResolver, CommentMutationDefs, deleteCommentMutationResolver, updateCommentMutationResolver } from './comment';
 import { gql } from "apollo-server-express";
 
 const APIRespondMutationDefs = gql`
@@ -9,4 +10,4 @@ const APIRespondMutationDefs = gql`
 `
 
 
-export { APIRespondMutationDefs, BlogMutationDefs, createBlogMutationResolver, createUserMutationResolver, loginMutationResolver, UserMutationDefs }
+export { APIRespondMutationDefs, deleteCommentMutationResolver, addCommentMutationResolver, updateCommentMutationResolver, deleteBlogMutationResolver, CommentMutationDefs, BlogMutationDefs, createBlogMutationResolver, createUserMutationResolver, loginMutationResolver, UserMutationDefs }

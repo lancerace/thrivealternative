@@ -17,6 +17,7 @@ async function startApolloServer() {
         typeDefs: typeDefs,
         resolvers: resolvers,
         introspection: true,
+        persistedQueries: false,
         context: ({ req }) => {
             return { req };
         },

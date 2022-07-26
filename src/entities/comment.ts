@@ -6,7 +6,7 @@ export default class Comment {
     @PrimaryGeneratedColumn()
     commentId: number;
 
-    @Column({ nullable: false, unique:true })
+    @Column({ nullable: false, unique: true })
     comment: string;
 
     @CreateDateColumn({ type: "timestamptz", default: null, nullable: true })
@@ -18,8 +18,11 @@ export default class Comment {
     @DeleteDateColumn({ type: "timestamptz", default: null, nullable: true })
     deletedAt: Date;
 
-    @ManyToOne(() => Blog, blog => blog.Comments)
-    @JoinColumn({ name: 'blogId' })
+    @Column({ nullable: true })
+    blogId: number;
+
+    @ManyToOne(() => Blog, blog => blog.comments)
+    @JoinColumn({ name: "blogId" })
     blog: Blog
-    
+
 }

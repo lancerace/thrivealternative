@@ -22,11 +22,14 @@ export default class Blog {
     @DeleteDateColumn({ type: "timestamptz", default: null, nullable: true })
     deletedAt: Date;
 
-    @ManyToOne(()=>User, (user)=> user.blogs)
-    @JoinColumn({ name: 'userId' })
+    @ManyToOne(() => User, (user) => user.blogs)
+    @JoinColumn({ name: 'authorId', referencedColumnName: 'userId' })
     user: User
 
-    @OneToMany(() => Comment, comment => comment.blog)
-    Comments: Comment[]
+    @Column({ nullable: true })
+    authorId: number;
+
+    @OneToMany(() => Comment, comment => comment.blog, {cascade: ["soft-remove"]})
+    comments: Comment[]
     
 }
